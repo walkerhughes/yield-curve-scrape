@@ -54,3 +54,9 @@ def save_to_json(dict_obj):
     with open(f"./data/{date}.json", "w") as newfile:
         json.dump(dict_obj, newfile)
     print(f"File saved to ./data/{date}.json")
+
+
+if __name__ == "__main__": 
+    save_to_json(
+        get_yc_data(verbose = False)
+    )
