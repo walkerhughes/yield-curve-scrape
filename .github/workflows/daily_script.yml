@@ -3,7 +3,7 @@ name: Daily get_yc_data Script Execution
 on:
   schedule:
     # Runs every day
-    - cron: '*/5 * * * *'
+    - cron: '*/1 * * * *'
 
 jobs:
   run-scrapy-script:
@@ -27,4 +27,4 @@ jobs:
 
     - name: Run get_yc_data.py script
       run: |
-        python3 ./scripts/get_yc_data.py
+        python ./scripts/get_yc_data.py
