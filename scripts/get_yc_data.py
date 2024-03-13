@@ -2,6 +2,7 @@ import json
 import requests
 from datetime import datetime
 from bs4 import BeautifulSoup
+import os
 
 def get_current_month():
     today = datetime.today().date()
@@ -50,10 +51,12 @@ def get_yc_data(verbose = False):
         raise ValueError(f"Failed with status code {status_code}. Either 'Month' argument invalid or data cannot be parsed as implemented.")
 
 def save_to_json(dict_obj):
+    if not os.path.exists("./data"): 
+        os.mkdir('./data')
     date = dict_obj["date"].replace("/", "-")
     with open(f"./data/{date}.json", "w") as newfile:
         json.dump(dict_obj, newfile)
-    print(f"File saved to ./data/{date}.json")
+    # print(f"File saved to ./data/{date}.json")
 
 
 if __name__ == "__main__": 
