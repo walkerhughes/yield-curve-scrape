@@ -17,7 +17,7 @@ def format_payload_url():
 
 def scrape_yield_curve_data_json():
     response = requests.get(format_payload_url())
-    soup = BeautifulSoup(response.text, "html")
+    soup = BeautifulSoup(response.text, features="html.parser")
     yc_values_on_date = soup.find_all("tr")[-1]
     parsed_data = [_.text.strip() for _ in yc_values_on_date.__dict__["contents"][1::2]]
     yc_data_json = {
