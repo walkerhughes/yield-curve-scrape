@@ -22,7 +22,6 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
         # Add other dependencies 
-        python3 -m pip install --upgrade os
         python3 -m pip install --upgrade json
         python3 -m pip install --upgrade datetime
         python3 -m pip install --upgrade requests
