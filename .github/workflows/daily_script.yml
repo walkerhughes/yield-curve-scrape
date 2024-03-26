@@ -33,4 +33,4 @@ jobs:
 
     - name: Run get_yc_data.py script
       run: |
-        python ./scripts/get_yc_data.py
+        python3 ./scripts/get_yc_data.py
