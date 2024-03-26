@@ -18,6 +18,12 @@ jobs:
       with:
         python-version: '3.8' 
 
+    - name: Upload Data Directory
+      uses: actions/upload-artifact@v3
+      with:
+        name: data
+        path: ./scripts/data
+
     - name: Install dependencies
       run: |
         python3 -m pip install --upgrade pip
